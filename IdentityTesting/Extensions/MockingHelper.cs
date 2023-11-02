@@ -11,6 +11,12 @@ namespace IdentityTesting.Extensions;
 
 internal static class MockingHelper
 {
+    /// <summary>
+    /// ASP.NET Core Identity framework's SignInManager user sign-in authentication is very tightly coupled to the IHttpContextAccessor.
+    /// This method will inject a fake (mocks) IHttpContextAccess implementation so the SignInManager sign-in features can be executed
+    /// in a Microsoft Test Project scenario.
+    /// </summary>
+    /// <param name="serviceCollection">The service collection used to build the DI service provider.</param>
     public static void AddHttpContextAccessorMock(this IServiceCollection serviceCollection)
     {
         // Mock IAuthenticationService
