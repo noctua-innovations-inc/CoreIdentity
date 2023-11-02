@@ -14,6 +14,10 @@ namespace IdentityTesting;
 
 public sealed class IdentityTesting
 {
+    protected readonly string TestPassword = "123456";
+    protected readonly string TestPasswordHash = "LgDTVa7Es6Zy+mDYo3vIRfolX9w=";
+    protected readonly string TestSecuritySalt = "ogf3xWsRWElEvQLGZ8tXow==";
+
     #region --[ CTOR ]--
 
     public IdentityTesting()
@@ -27,7 +31,7 @@ public sealed class IdentityTesting
         LazyServiceProvider = new(() => Services.BuildServiceProvider());
     }
 
-    #endregion
+    #endregion --[ CTOR ]--
 
     #region --[ DI Services ]--
 
@@ -39,7 +43,7 @@ public sealed class IdentityTesting
     private IConfiguration Configuration => ServiceProvider.GetRequiredService<IConfiguration>();
     private IDbContextFactory<AspNetIdentityModel> DbContextFactory => ServiceProvider.GetRequiredService<IDbContextFactory<AspNetIdentityModel>>();
 
-    #endregion
+    #endregion --[ DI Services ]--
 
     /// <summary>
     /// Sanity test: Ensure our database connectivity is working at the most basic level.
@@ -133,5 +137,16 @@ public sealed class IdentityTesting
         validatedToken.Should().NotBeNull(because: "Security token was created through JWT validation.");
 
         #endregion --[ Assert ]--
+    }
+
+    [Fact]
+    public void Identity_PasswordHashingValidation_Successful()
+    {
+        // Arrange - the data
+        // Action - encode a clear text password into a hashed password
+        var hashPassword = Security.EncodePassword(TestPassword, TestSecuritySalt);
+
+        // Assert - that the clear text password was successfully hashed
+        hashPassword.Should().BeEquivalentTo(TestPasswordHash, because: "We successfully hashed the password.");
     }
 }
