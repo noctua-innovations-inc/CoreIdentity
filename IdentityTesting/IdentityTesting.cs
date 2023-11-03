@@ -12,11 +12,17 @@ using Microsoft.Extensions.Logging.Abstractions;
 
 namespace IdentityTesting;
 
+/// <summary>
+/// This is not intended to illustrate Test Driven Development (TDD) and/or
+/// unit testing.  It is intended to be a more agile code execution framework
+/// than would be offered by a Console application with the intent of proving
+/// the subject matter's primary concept (Customizing ASP.NET Core Identity).
+/// </summary>
 public sealed class IdentityTesting
 {
-    protected readonly string TestPassword = "123456";
-    protected readonly string TestPasswordHash = "LgDTVa7Es6Zy+mDYo3vIRfolX9w=";
-    protected readonly string TestSecuritySalt = "ogf3xWsRWElEvQLGZ8tXow==";
+    private readonly string TestPassword = "123456";
+    private readonly string TestPasswordHash = "LgDTVa7Es6Zy+mDYo3vIRfolX9w=";
+    private readonly string TestSecuritySalt = "ogf3xWsRWElEvQLGZ8tXow==";
 
     #region --[ CTOR ]--
 
@@ -47,6 +53,7 @@ public sealed class IdentityTesting
 
     /// <summary>
     /// Sanity test: Ensure our database connectivity is working at the most basic level.
+    ///              Database connectivity could fail through mistakes in the ORM definition.
     /// </summary>
     [Fact]
     public void DbContext_Connectivity_Successful()
@@ -89,6 +96,9 @@ public sealed class IdentityTesting
 
     /// <summary>
     /// Validate that the user login happy path works as expected.
+    /// This is intended to provide that the end-user's credentials are
+    /// successfully validated with our ASP.NET Core Identity Customizations
+    /// and nothing more.
     /// </summary>
     /// <returns></returns>
     [Fact]

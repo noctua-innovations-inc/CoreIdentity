@@ -5,26 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AspNetIdentity.mdb" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="AspNetIdentity.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.Jet" Version="7.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
-    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
     <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.6" />
     <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SqlMembershipEntityModel\SqlMembershipEntityModel.csproj" />
   </ItemGroup>
 
 </Project>
