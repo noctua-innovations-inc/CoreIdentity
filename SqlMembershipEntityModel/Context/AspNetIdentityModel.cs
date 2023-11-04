@@ -1,9 +1,9 @@
 ﻿#nullable disable
 
-using AspNetIdentity.Models;
+using SqlMembershipEntityModel.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AspNetIdentity.Data;
+namespace SqlMembershipEntityModel.Context;
 
 public partial class AspNetIdentityModel : DbContext
 {

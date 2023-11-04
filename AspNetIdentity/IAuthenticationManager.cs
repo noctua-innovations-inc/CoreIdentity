@@ -1,5 +1,6 @@
 ﻿using AspNetIdentity.Models;
 using Microsoft.AspNetCore.Identity;
+using SqlMembershipEntityModel.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

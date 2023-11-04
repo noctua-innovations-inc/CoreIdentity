@@ -2,7 +2,7 @@
 
 using System;
 
-namespace AspNetIdentity.Models;
+namespace SqlMembershipEntityModel.Models;
 
 public partial class AspNetUsersInRole
 {

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SqlMembershipEntityModel.Context;
 using System.Runtime.Versioning;
 
 namespace AspNetIdentity.Extensions;

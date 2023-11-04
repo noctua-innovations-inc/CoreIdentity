@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AspNetIdentity.Models;
+namespace SqlMembershipEntityModel.Models;
 
 public partial class AspNetRole
 {

@@ -3,6 +3,8 @@ using AspNetIdentity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using SqlMembershipEntityModel.Context;
+using SqlMembershipEntityModel.Models;
 using System;
 using System.Data;
 using System.Data.SqlTypes;

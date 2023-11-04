@@ -1,6 +1,6 @@
 ﻿#nullable disable
 
-namespace AspNetIdentity.Models;
+namespace SqlMembershipEntityModel.Models;
 
 public partial class AspNetSchemaVersion
 {
