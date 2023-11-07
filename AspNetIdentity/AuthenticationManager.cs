@@ -62,7 +62,7 @@ namespace AspNetIdentity
             // This method does a lot...
             //  * Checks whether sign-in is allowed.
             //  * Checks that the password is correct.
-            //  * Sets up relavent two-factor authentication cookie.
+            //  * Sets up relevant two-factor authentication cookie.
             //  * Performs sign-in process which concludes with the creation of a
             //    ClaimsPrincipal cookie which is persisted.
             var signInResult = await SignInManager.PasswordSignInAsync(applicationUser, user.Password, true, true);
